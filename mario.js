@@ -53,8 +53,11 @@ formElem.onsubmit = function(event) {
  * Displays an error message on the text input, and colors it red
  */
 function displayError(message) {
+	// first, clear the old content
+    document.getElementById("pyramid").innerHTML = "";
     heightElem.className = "invalid-field";
     document.querySelector(".error-message").innerHTML = message;
+	
 }
 
 
