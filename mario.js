@@ -1,6 +1,6 @@
 var heightElem = document.getElementById("height");
 var formElem = document.getElementById("draw-form");
-
+var nonDigit = /\D/;
 // set a handler function for the form's submission event
 formElem.onsubmit = function(event) {
 
@@ -22,7 +22,10 @@ formElem.onsubmit = function(event) {
       displayError("Please provide a height");
       return;
     }
-
+    if (heightStr.match(nonDigit)){
+       displayError("That's not a valid height.");
+       return;
+     }    
 
     // convert the string to an int
     height = parseInt(heightStr);
